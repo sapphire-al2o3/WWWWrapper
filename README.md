@@ -11,21 +11,15 @@ using WWW = WWWWrapper;
 public class WWWWrapperTest : MonoBehaviour
 {
     [SerializeField]
-    bool forceError = false;
-
-    [SerializeField]
-    float delay = 0.0f;
-
-    [SerializeField]
     string url = "http://unity3d.com";
 
     IEnumerator Start()
     {
         using (WWW www = new WWW(url))
         {
-            www.delay = delay;
-            www.forceError = forceError;
-
+            // 5s遅延
+            www.delay = 5.0f;
+            
             yield return www;
 
             if (!string.IsNullOrEmpty(www.error))
