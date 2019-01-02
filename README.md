@@ -5,7 +5,7 @@ Unity 2017.4
 
 ## Example
 
-```
+```csharp
 using WWW = WWWWrapper;
 
 public class WWWWrapperTest : MonoBehaviour
