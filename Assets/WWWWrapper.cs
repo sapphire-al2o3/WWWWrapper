@@ -75,7 +75,7 @@ public class WWWWrapper : CustomYieldInstruction, IDisposable
         {
             if (delay > 0)
             {
-                return Time.realtimeSinceStartup - delayStartTime < delay;
+                return Time.realtimeSinceStartup - delayStartTime < delay || www.keepWaiting;
             }
             else
             {
@@ -120,7 +120,7 @@ public class WWWWrapper : CustomYieldInstruction, IDisposable
         {
             if (delay > 0.0f)
             {
-                return Time.realtimeSinceStartup - delayStartTime >= delay;
+                return Time.realtimeSinceStartup - delayStartTime >= delay && www.isDone;
             }
             else
             {
